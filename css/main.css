@@ -110,6 +110,26 @@ body {
   padding: 4.4rem;
 }
 
+.bill-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+.price-plan {
+  margin-right: auto;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--color-grey-blue);
+}
+
 .price-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,15 +137,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 4.8rem;
-}
-
-.price-box__plan {
-  margin-right: auto;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: var(--color-grey-blue);
 }
 
 .price-box__plan-amount {
@@ -142,7 +153,9 @@ body {
 
 .slider-box {
   position: relative;
-  margin-bottom: 4.8rem;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  grid-column: 1 /-1;
 }
 
 .input__slider {
