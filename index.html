@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="/script.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header">
+        <h1 class="heading-primary">Simple, traffic-based pricing</h1>
+        <p class="heading-secondary">
+          Sign-up for our 30-day trial. No credit card
+        </p>
+      </header>
+
+      <div class="component-price">
+        <div class="bill">
+          <div class="price-box">
+            <p class="price-box__plan">100k pageviews</p>
+            <p class="price-box__plan-amount">$16.00</p>
+            <p class="price-box__plan-duration">/month</p>
+          </div>
+
+          <div class="slider-box">
+            <input
+              type="range"
+              class="input__slider"
+              min="1"
+              max="5"
+              step="1"
+            />
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="billing-box">
+            <p class="billing-box__monthly">Monthly Billing</p>
+
+            <label class="toggle">
+              <input type="checkbox" class="toggle__input" />
+              <div class="toggle__fill"></div>
+            </label>
+
+            <p class="billing-box__yearly">Yearly Billing</p>
+            <p class="billing-box__discount">25% discount</p>
+          </div>
+        </div>
+
+        <div class="features">
+          <ul class="feature-box">
+            <li class="feature-box__item">
+              <img
+                class="feature-box__icon"
+                src="images/icon-check.svg"
+                alt="check icon"
+              />
+              <p class="feature-box__text">Unlimited websites</p>
+            </li>
+
+            <li class="feature-box__item">
+              <img
+                class="feature-box__icon"
+                src="images/icon-check.svg"
+                alt="check icon"
+              />
+              <p class="feature-box__text">100% data ownership</p>
+            </li>
+
+            <li class="feature-box__item">
+              <img
+                class="feature-box__icon"
+                src="images/icon-check.svg"
+                alt="check icon"
+              />
+              <p class="feature-box__text">Email reports</p>
+            </li>
+          </ul>
+
+          <button class="btn">Start my trial</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
