@@ -252,6 +252,8 @@ html .heading-primary {
           box-shadow: 0 1.2rem 3rem rgba(16, 213, 194, 0.7);
   z-index: 3;
   position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .input__slider::-webkit-slider-thumb:hover {
@@ -272,6 +274,8 @@ html .heading-primary {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 1.2rem 3rem rgba(16, 213, 194, 0.7);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .input__slider::-moz-range-thumb:hover {

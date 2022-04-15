@@ -5,7 +5,7 @@ const checkBoxEl = document.querySelector(".toggle__input");
 const inputSliderEl = document.querySelector(".input__slider");
 const ProgressBarEl = document.querySelector(".progress-bar");
 
-const planEl = document.querySelector(".price-box__plan");
+const planEl = document.querySelector(".price-plan");
 const planAmountEl = document.querySelector(".price-box__plan-amount");
 const planDurationEl = document.querySelector(".price-box__plan-duration");
 

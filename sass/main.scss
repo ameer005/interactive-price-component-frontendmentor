@@ -241,6 +241,7 @@ html {
   box-shadow: 0 1.2rem 3rem hsla(174, 86%, 45%, 0.7);
   z-index: 3;
   position: relative;
+  transition: all 0.2s;
 
   &:hover {
     background-color: lighten(hsla(174, 86%, 45%, 0.7), 3%);
@@ -261,6 +262,7 @@ html {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 1.2rem 3rem hsla(174, 86%, 45%, 0.7);
+  transition: all 0.2s;
 
   &:hover {
     background-color: lighten(hsla(174, 86%, 45%, 0.7), 3%);
