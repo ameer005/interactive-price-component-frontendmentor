@@ -22,6 +22,23 @@ FONT SIZE SYSTEM (px)
   --color-blue-dark: hsl(227, 35%, 25%); //Text & CTA Background
 }
 
+// media queriy manager
+
+@mixin respond($breakpoint) {
+  // 520px
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 32.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-min {
+    @media only screen and (max-width: 27em) {
+      @content;
+    }
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -36,65 +53,86 @@ FONT SIZE SYSTEM (px)
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-}
 
-body {
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  line-height: 1;
-  display: grid;
-  place-items: center;
+  @include respond(phone) {
+    font-size: 56.25%;
+  }
 
-  min-height: 100vh;
-  background-color: var(--color-very-pale-blue);
-  background-image: url(../images/bg-pattern.svg);
-  background-size: 100vw 40rem;
-  background-repeat: no-repeat;
-}
+  body {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    display: grid;
+    place-items: center;
 
-.wrapper {
-  width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-very-pale-blue);
+    background-image: url(../images/bg-pattern.svg);
+    background-size: 100vw 40rem;
+    background-repeat: no-repeat;
+  }
 
-  display: flex;
-  place-items: center;
-  flex-direction: column;
-  padding: 2.4rem;
-}
+  .wrapper {
+    width: 100%;
 
-.header {
-  position: relative;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    padding: 2.4rem;
+  }
 
-  margin-bottom: 8.6rem;
-}
+  .header {
+    position: relative;
 
-.header::before {
-  position: absolute;
-  content: "";
-  background: url("../images/pattern-circles.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 12rem;
-  width: 12rem;
-  top: 0;
-  left: 50%;
+    margin-bottom: 8.6rem;
 
-  transform: translate(-50%, -25%);
-  z-index: -1;
-}
+    @include respond(phone) {
+      margin-top: 6.4rem;
+    }
 
-.heading-primary {
-  font-size: 2.7rem;
-  font-weight: 800;
-  color: var(--color-blue-dark);
-  text-align: center;
+    @include respond(phone-min) {
+      margin-bottom: 6.4rem;
+    }
+  }
 
-  margin-bottom: 1.4rem;
+  .header::before {
+    position: absolute;
+    content: "";
+    background: url("../images/pattern-circles.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 12rem;
+    width: 12rem;
+    top: 0;
+    left: 50%;
+
+    transform: translate(-50%, -25%);
+    z-index: -1;
+  }
+
+  .heading-primary {
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: var(--color-blue-dark);
+    text-align: center;
+
+    margin-bottom: 1.4rem;
+
+    @include respond(phone-min) {
+      font-size: 2.2rem;
+    }
+  }
 }
 
 .heading-secondary {
   font-size: 1.8rem;
   text-align: center;
   color: var(--color-grey-blue);
+  line-height: 1.6;
+
+  @include respond(phone-min) {
+    font-size: 1.4rem;
+  }
 }
 
 .component-price {
@@ -108,6 +146,10 @@ body {
 .bill {
   border-bottom: 1px solid hsl(224, 65%, 95%);
   padding: 4.4rem;
+
+  @include respond(phone) {
+    padding: 4.4rem 2.4rem;
+  }
 }
 
 .bill-box {
@@ -117,6 +159,11 @@ body {
   row-gap: 4.8rem;
 
   margin-bottom: 4.8rem;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
 }
 
 .price-plan {
@@ -126,12 +173,25 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   color: var(--color-grey-blue);
+
+  @include respond(phone) {
+    margin: 0;
+    justify-self: center;
+  }
+
+  @include respond(phone-min) {
+    font-size: 1.3rem;
+  }
 }
 
 .price-box {
   display: flex;
   align-items: center;
   // margin-bottom: 4.8rem;
+
+  @include respond(phone) {
+    justify-self: center;
+  }
 
   &__plan-amount {
     font-size: 4rem;
@@ -236,9 +296,6 @@ body {
     margin-left: auto;
   }
 
-  &__yearly {
-  }
-
   &__discount {
     font-size: 1rem;
     color: var(--color-secondary-dark);
@@ -247,6 +304,12 @@ body {
     border-radius: 1.5rem;
 
     margin-right: 1.2rem;
+
+    @include respond(phone-min) {
+      & span {
+        display: none;
+      }
+    }
   }
 }
 
@@ -298,6 +361,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2.4rem 4.4rem;
+
+  @include respond(phone) {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.4rem 2.4rem;
+  }
 }
 
 .feature-box {
@@ -310,6 +379,11 @@ body {
 
     margin-bottom: 1.4rem;
     color: var(--color-grey-blue);
+
+    @include respond(phone) {
+      text-align: center;
+      display: block;
+    }
   }
 
   &__icon {
@@ -317,6 +391,10 @@ body {
   }
 
   &__text {
+    @include respond(phone) {
+      display: inline-block;
+      margin-left: 1rem;
+    }
   }
 }
 

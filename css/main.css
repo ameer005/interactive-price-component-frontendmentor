@@ -35,7 +35,13 @@ html {
           box-sizing: border-box;
 }
 
-body {
+@media only screen and (max-width: 32.5em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+html body {
   font-family: "Manrope", sans-serif;
   font-weight: 600;
   line-height: 1;
@@ -49,7 +55,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.wrapper {
+html .wrapper {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,12 +68,24 @@ body {
   padding: 2.4rem;
 }
 
-.header {
+html .header {
   position: relative;
   margin-bottom: 8.6rem;
 }
 
-.header::before {
+@media only screen and (max-width: 32.5em) {
+  html .header {
+    margin-top: 6.4rem;
+  }
+}
+
+@media only screen and (max-width: 27em) {
+  html .header {
+    margin-bottom: 6.4rem;
+  }
+}
+
+html .header::before {
   position: absolute;
   content: "";
   background: url("../images/pattern-circles.svg");
@@ -82,7 +100,7 @@ body {
   z-index: -1;
 }
 
-.heading-primary {
+html .heading-primary {
   font-size: 2.7rem;
   font-weight: 800;
   color: var(--color-blue-dark);
@@ -90,10 +108,23 @@ body {
   margin-bottom: 1.4rem;
 }
 
+@media only screen and (max-width: 27em) {
+  html .heading-primary {
+    font-size: 2.2rem;
+  }
+}
+
 .heading-secondary {
   font-size: 1.8rem;
   text-align: center;
   color: var(--color-grey-blue);
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 27em) {
+  .heading-secondary {
+    font-size: 1.4rem;
+  }
 }
 
 .component-price {
@@ -110,6 +141,12 @@ body {
   padding: 4.4rem;
 }
 
+@media only screen and (max-width: 32.5em) {
+  .bill {
+    padding: 4.4rem 2.4rem;
+  }
+}
+
 .bill-box {
   display: -ms-grid;
   display: grid;
@@ -122,12 +159,34 @@ body {
   margin-bottom: 4.8rem;
 }
 
+@media only screen and (max-width: 32.5em) {
+  .bill-box {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+}
+
 .price-plan {
   margin-right: auto;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   color: var(--color-grey-blue);
+}
+
+@media only screen and (max-width: 32.5em) {
+  .price-plan {
+    margin: 0;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 27em) {
+  .price-plan {
+    font-size: 1.3rem;
+  }
 }
 
 .price-box {
@@ -137,6 +196,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 32.5em) {
+  .price-box {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 
 .price-box__plan-amount {
@@ -252,6 +318,12 @@ body {
   margin-right: 1.2rem;
 }
 
+@media only screen and (max-width: 27em) {
+  .billing-box__discount span {
+    display: none;
+  }
+}
+
 .toggle {
   width: 4rem;
   height: 2rem;
@@ -313,6 +385,17 @@ body {
   padding: 2.4rem 4.4rem;
 }
 
+@media only screen and (max-width: 32.5em) {
+  .features {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+    padding: 2.4rem 2.4rem;
+  }
+}
+
 .feature-box__item {
   font-size: 1.2rem;
   list-style: none;
@@ -327,8 +410,22 @@ body {
   color: var(--color-grey-blue);
 }
 
+@media only screen and (max-width: 32.5em) {
+  .feature-box__item {
+    text-align: center;
+    display: block;
+  }
+}
+
 .feature-box__icon {
   width: 1.2rem;
+}
+
+@media only screen and (max-width: 32.5em) {
+  .feature-box__text {
+    display: inline-block;
+    margin-left: 1rem;
+  }
 }
 
 .btn {
