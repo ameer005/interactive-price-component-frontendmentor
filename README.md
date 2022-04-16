@@ -4,7 +4,7 @@
 
 ### Links
 
-- Live Site URL: [https://ameer005.github.io/hurdle-landing-page-with-single-introductory-section-frontendmentor/](https://ameer005.github.io/hurdle-landing-page-with-single-introductory-section-frontendmentor/)
+- Live Site URL: [https://ameer005.github.io/interactive-price-component-frontendmentor/](https://ameer005.github.io/interactive-price-component-frontendmentor/)
 
 ### Built with
 
